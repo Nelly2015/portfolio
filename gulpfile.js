@@ -78,8 +78,7 @@ gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
 		'app/.htaccess',
 		]).pipe(gulp.dest('dist'));
 
-	var buildCss = gulp.src([
-		'app/libs/font-awesome/css/font-awesome.min.css',
+	var buildCss = gulp.src([		
 		'app/css/style.min.css',		
 		]).pipe(gulp.dest('dist/css'));
 
