@@ -22,7 +22,7 @@ gulp.task('common-js', function() {
 		
 		])
 	.pipe(concat('common.min.js'))
-	//.pipe(uglify())
+	.pipe(uglify())
 	.pipe(gulp.dest('app/js'));
 });
 
@@ -33,7 +33,7 @@ gulp.task('js', ['common-js'], function() {
 		'app/js/common.min.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
-	//.pipe(uglify()) // Минимизировать весь js (на выбор)
+	.pipe(uglify()) // Минимизировать весь js (на выбор)
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({stream: true}));
 });
@@ -79,7 +79,8 @@ gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
 		]).pipe(gulp.dest('dist'));
 
 	var buildCss = gulp.src([
-		'app/css/style.min.css',
+		'app/libs/font-awesome/css/font-awesome.min.css',
+		'app/css/style.min.css',		
 		]).pipe(gulp.dest('dist/css'));
 
 	var buildJs = gulp.src([

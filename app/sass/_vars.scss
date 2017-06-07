@@ -3,7 +3,7 @@ $default-font: "Segoe UI", sans-serif;
 $accent:#4fc1e9;
 $main-font-color:#666;
 $link: #4d5154;
-
+$helvetica: "helvetica","Arial",sans-serif;
 
 @mixin ease(){
 	transition: all 0.3s ease-out 0s;
